@@ -1,0 +1,21 @@
+
+
+
+body {
+  background-image: url("tesla1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+    height: 100vh;
+
+ }
+
+ h1, h2 {
+  color: yellow;
+ }
+
+ * {
+  margin: 0;
+  padding: 0;
+ }
+
+

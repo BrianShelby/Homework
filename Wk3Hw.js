@@ -7,10 +7,11 @@ const pizzaToppings = ['onion', 'bacon', 'mushroom', 'cheese' ];
 // then informs them of the available toppings by looping over pizzaToppings
 
 function greetCustomer() {
-  console.log("Welcome to Brian's Pizza! Here are our toppings:");
-    for (let t of pizzaToppings) {
-      console.log(t);
+  let greeting = `Welcome to Brian's Pizza! Here are our toppings: `;
+      for (let t of pizzaToppings) {
+        greeting += `${t}, `;
   };
+  console.log(greeting);
 };
 
 // greetCustomer();
@@ -20,11 +21,16 @@ function greetCustomer() {
 // i.e. "One large thick crust pizza with x, y, z, ... coming up!"
 // outputs a list with the size, crust, and toppings
 
-function getPizzaOrder(size, crust, ...allToppings) {
-  takeOrder = [size, crust, allToppings];
-  console.log(`One ${takeOrder[0]} ${takeOrder[1]} crust pizza with ${takeOrder[2]} coming right up!`);
-  return takeOrder;
+function getPizzaOrder(size, crust, ...toppings) {
+  let order = `One ${size} ${crust} crust pizza with `;
+  for (let topping of toppings) {
+     order += `${topping}, `;
+  }
+  console.log(`${order}... Coming Up!`);
+  return [size, crust, toppings];
 };
+
+// let customerOrder = getPizzaOrder("large", "thin", "onion", "bacon", "mushroom", "cheese")
 
 // getPizzaOrder("large", "thin", "onion", " bacon", " mushroom", " cheese");
 
@@ -34,12 +40,12 @@ function getPizzaOrder(size, crust, ...allToppings) {
 // outputs a pizza Object with appropriate key-value pairs for size, crust, and toppings
 
 function preparePizza(makeParam){
-  makeObject = {
+  console.log("...cooking pizza...");
+  let makeObject = {
   size: makeParam[0],
   crust: makeParam[1],
   toppings: makeParam[2],
 }
-console.log("...cooking pizza...");
 return makeObject;
 };
 
@@ -58,7 +64,7 @@ function servePizza(pizzaObj) {
 // #6 Call each function and (starting with preparePizza) use the returned value from the previous function as its input
 
 greetCustomer();
-(servePizza(preparePizza(getPizzaOrder('large','thin','onion','bacon','mushroom','cheese','tomato'))));
+(servePizza(preparePizza(getPizzaOrder('large','thin','onion',' bacon',' mushroom',' cheese',' tomato'))));
 
 
 

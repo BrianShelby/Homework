@@ -14,7 +14,6 @@ function greetCustomer() {
   console.log(greeting);
 };
 
-// greetCustomer();
 
 // #3 Create a getPizzaOrder function that has the parameters size, crust,
 // and an indefinite amount of toppings as inputs. Prints the order,
@@ -30,9 +29,6 @@ function getPizzaOrder(size, crust, ...toppings) {
   return [size, crust, toppings];
 };
 
-// let customerOrder = getPizzaOrder("large", "thin", "onion", "bacon", "mushroom", "cheese")
-
-// getPizzaOrder("large", "thin", "onion", " bacon", " mushroom", " cheese");
 
 // #4 Create a preparePizza function that
 // has an array as its parameter with three items: a size, a crust, and a list of toppings
@@ -49,7 +45,6 @@ function preparePizza(makeParam){
 return makeObject;
 };
 
-// preparePizza(['large'], ['thin'], ['onion','bacon','mushroom','cheese','sausage']);
 
 // #5 Create a servePizza function that
 // has a parameter of a pizza Object
@@ -57,7 +52,12 @@ return makeObject;
 // outputs the same pizza Object that was passed in
 
 function servePizza(pizzaObj) {
-  console.log(`Order up! Here's your ${pizzaObj.size} ${pizzaObj.crust} crust pizza with ${pizzaObj.toppings} ...enjoy!`);
+  let orderReady = `Order up! Here's your ${pizzaObj.size} ${pizzaObj.crust} crust pizza with `;
+
+  for (let topping of pizzaObj.toppings) {
+    orderReady += `${topping}, `;
+  }
+  console.log(`${orderReady}...Enjoy!`)
   return pizzaObj;
 };
 

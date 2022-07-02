@@ -28,7 +28,11 @@
 a {
   color: #ffffff;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 25px;  
+}
+
+a:hover {
+  color: yellowgreen;
 }
 
  .carImg {
@@ -52,22 +56,9 @@ body {
   font-size: 12px;
 }
 
-#img1 {
+#img1, #img2, #img3 {
   width: 100%;
   height: 100%;
   border: 2px solid lightgrey;
 }
 
-#img2 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 2px solid lightgrey;
-}
-
-#img3 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 2px solid lightgrey;
-}
